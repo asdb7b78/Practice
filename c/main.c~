@@ -5,9 +5,9 @@
 int main(int argc, char** argv){
 	void catch(int);
 	int a;
+	printf("安安\n");
 	signal(SIGSEGV, catch);
-	a = *(int *)-1;
-	printf("%d\n", a);
+	a = *(int *)0;
 }
 
 void catch(int snum){
