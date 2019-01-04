@@ -2,15 +2,15 @@
 #include <stdlib.h>
 #include <signal.h>
 
-int main(int argc, char** argv){
-	void catch(int);
-	int a;
-	signal(SIGSEGV, catch);
-	a = *(int *)-1;
-	printf("%d\n", a);
+void catch(int snum){   
+	printf("divided by 0\n");
+    return;
 }
 
-void catch(int snum){
-	printf("got signal %d\n", snum);
-	exit(0);
+int main(int argc, char *argv[]){
+	signal(SIGFPE, catch);
+    for (int i=0; i<1; i++) {
+        printf("%d\n", 1000/i);
+    }
+	return 0;
 }
