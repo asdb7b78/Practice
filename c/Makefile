@@ -1,2 +1,6 @@
-all:
-	gcc main.c -o m.out -O2 -Wall -std=c11
+all: main.c
+	gcc main.c -o m.out -O2 -Wall
+test: test.c
+	gcc test.c -o m.out -O2 -Wall
+clean:
+	rm -f m.out t.out
