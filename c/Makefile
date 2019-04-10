@@ -1,2 +1,2 @@
 all:
-	gcc main.c -o m.out -O2 -Wall
+	gcc main.c -o m.out -O2 -Wall -std=c11
