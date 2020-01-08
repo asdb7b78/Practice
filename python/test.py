@@ -1,4 +1,3 @@
-for i in range(100):
-    for j in range(100):
-        print(i*j, end=' ')
-    print()
+file = open("活頁簿1.csv", "r")
+for i in file:
+    print(i.strip())
